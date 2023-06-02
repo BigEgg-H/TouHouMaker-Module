@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="SCAnalyser" inherits="RefCounted" version="4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+		SC(流式命令)分析器,用于分析SC以交由GGSCCS执行.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="Analyse">
+			<return type="void" />
+			<description>
+				分析命令.
+			所有的命令都要进过分析才能执行.
+			</description>
+		</method>
+		<method name="BPSClearAll">
+			<return type="void" />
+			<description>
+				清除所有的弹幕.
+			</description>
+		</method>
+		<method name="BPSSpawnBullet">
+			<return type="void" />
+			<param index="0" name="Mod" type="RID" />
+			<param index="1" name="Pos" type="Vector2" />
+			<param index="2" name="Dir" type="Vector2" />
+			<param index="3" name="TeamID" type="int" />
+			<description>
+				在指定的位置发射指定方向的指定队伍的弹幕模组.
+			</description>
+		</method>
+		<method name="GASClearModAll">
+			<return type="void" />
+			<description>
+				卸载所有的模组.
+			</description>
+		</method>
+		<method name="GASClearModBulletAll">
+			<return type="void" />
+			<description>
+				卸载所有的弹幕模组.
+			</description>
+		</method>
+		<method name="GASClearModMapAll">
+			<return type="void" />
+			<description>
+				卸载所有的地图模组.
+			</description>
+		</method>
+		<method name="GASLoadModBullet">
+			<return type="void" />
+			<param index="0" name="Path" type="String" />
+			<description>
+				加载弹幕模组.
+			</description>
+		</method>
+		<method name="GASLoadModMap">
+			<return type="void" />
+			<param index="0" name="Path" type="String" />
+			<description>
+				加载地图模组.
+			</description>
+		</method>
+		<method name="GASLoadModPack">
+			<return type="void" />
+			<param index="0" name="Path" type="String" />
+			<description>
+				加载模组包.
+			</description>
+		</method>
+		<method name="GGInterruptProcess">
+			<return type="void" />
+			<param index="0" name="ExitCode" type="int" />
+			<description>
+				触发一个致命错误以中断游戏线程.
+			</description>
+		</method>
+		<method name="GGThrowError">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				抛出一个错误.
+			</description>
+		</method>
+		<method name="GGThrowInfo">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				抛出一个消息.
+			</description>
+		</method>
+		<method name="GGThrowWarning">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				抛出一个警告.
+			</description>
+		</method>
+		<method name="GGTravelToMainMenu">
+			<return type="void" />
+			<description>
+				漫游到主菜单中.
+			</description>
+		</method>
+		<method name="GGTravelToMap">
+			<return type="void" />
+			<param index="0" name="Mod" type="RID" />
+			<description>
+				漫游到指定的地图模组中.
+			</description>
+		</method>
+		<method name="GetSCCount">
+			<return type="int" />
+			<description>
+				获取此分析器中所拥有的SC数量.
+			</description>
+		</method>
+		<method name="Reset">
+			<return type="void" />
+			<description>
+				重置此分析令.
+			</description>
+		</method>
+	</methods>
+</class>

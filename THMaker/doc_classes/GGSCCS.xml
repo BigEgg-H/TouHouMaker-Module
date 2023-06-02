@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="GGSCCS" inherits="Object" version="4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+		GGSCCS,全局游戏流式命令控制系统.
+	用一个独立的线程来监管整个游戏的进行.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="Continue">
+			<return type="void" />
+			<description>
+				恢复GGSCCS的运行状态(从暂停或错误中).
+			</description>
+		</method>
+		<method name="GetLastErrorCode">
+			<return type="int" />
+			<description>
+				获取上一次发生的错误的错误码,并将其弹出.
+			</description>
+		</method>
+		<method name="GetSCCountRest">
+			<return type="int" />
+			<description>
+				获取本次循环中剩余的指令数(不推荐).不可靠,数值不准确,仍在修复当中.
+			</description>
+		</method>
+		<method name="GetSCCountTotal">
+			<return type="int" />
+			<description>
+				获取本次循环中总共的拥有的指令数.返回值因未知BUG目前会返回还没运行的指令数,不稳定,仍在修复当中.
+			</description>
+		</method>
+		<method name="GetStateCode">
+			<return type="int" />
+			<description>
+				获取状态码.
+			0:运行中,
+			1:暂停,
+			2:因错误而暂停,
+			3:死亡
+			</description>
+		</method>
+		<method name="Kill">
+			<return type="void" />
+			<description>
+				杀死GGSCCS,使其死亡,不可逆,会释放所有资源.
+			</description>
+		</method>
+		<method name="LogAndPrintError">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出错误到控制台和日志中.
+			</description>
+		</method>
+		<method name="LogAndPrintInfo">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出消息到控制台和日志中.
+			</description>
+		</method>
+		<method name="LogAndPrintWarning">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出警告到控制台和日志中.
+			</description>
+		</method>
+		<method name="LogError">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出错误到日志中.
+			</description>
+		</method>
+		<method name="LogInfo">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出消息到日志中.
+			</description>
+		</method>
+		<method name="LogWarning">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出警告到日志中.
+			</description>
+		</method>
+		<method name="Print">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出文本到控制台.
+			</description>
+		</method>
+		<method name="PrintError">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出错误到控制台.
+			</description>
+		</method>
+		<method name="PrintWarning">
+			<return type="void" />
+			<param index="0" name="Content" type="String" />
+			<description>
+				输出警告到控制台.
+			</description>
+		</method>
+		<method name="Reset">
+			<return type="void" />
+			<description>
+				重置GGSCCS.
+			这将会清空所有的状态.
+			</description>
+		</method>
+		<method name="Restart">
+			<return type="void" />
+			<description>
+				重启SC循环.
+			这将会清空所有的装载指令.
+			</description>
+		</method>
+		<method name="SCExecute">
+			<return type="void" />
+			<param index="0" name="SC" type="SCAnalyser" />
+			<description>
+				在调用线程执行SC.
+			</description>
+		</method>
+		<method name="SCPush">
+			<return type="void" />
+			<param index="0" name="SC" type="SCAnalyser" />
+			<description>
+				将SC推入SC循环.
+			</description>
+		</method>
+		<method name="SCPushAndWait">
+			<return type="void" />
+			<param index="0" name="SC" type="SCAnalyser" />
+			<description>
+				将SC推入SC循环并等待其完成.
+			</description>
+		</method>
+		<method name="SCPushToLoop">
+			<return type="void" />
+			<param index="0" name="SC" type="SCAnalyser" />
+			<description>
+				将SC推入SC固定循环,每次都会固定执行.
+			</description>
+		</method>
+		<method name="Stop">
+			<return type="void" />
+			<description>
+				暂定SC循环.
+			</description>
+		</method>
+		<method name="ThrowError">
+			<return type="void" />
+			<param index="0" name="ErrorCode" type="int" />
+			<description>
+				抛出一个错误,并叫停SC循环.
+			</description>
+		</method>
+		<method name="Wait">
+			<return type="void" />
+			<description>
+				阻塞线程以等待此次SC循环完成.
+			</description>
+		</method>
+		<method name="WaitAndRestart">
+			<return type="void" />
+			<description>
+				阻塞线程以等待此次SC循环完成并且重启.
+			</description>
+		</method>
+		<method name="WaitAndStop">
+			<return type="void" />
+			<description>
+				阻塞线程以等待此次SC循环完成并且暂停.
+			</description>
+		</method>
+	</methods>
+</class>

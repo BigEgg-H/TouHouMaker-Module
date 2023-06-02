@@ -1,0 +1,10 @@
+# SCsub
+
+Import('env')
+
+# Add all cpp files to the build
+env.add_source_files(env.modules_sources, "TIGAS/*.cpp" )
+env.add_source_files(env.modules_sources, "HDVDBPS/*.cpp" )
+env.add_source_files(env.modules_sources, "GGSCCS/*.cpp" )
+env.add_source_files(env.modules_sources, "*.cpp" )
+
